@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Online Bookstore</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #fceabb; /* light yellow background */
+  margin: 0;
+  padding: 20px;
+  color: #2c3e50;
+}
+.book-list, .cart {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  border: 2px solid #f8b500;
+}
+.book {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+.book:last-child {
+  border-bottom: none;
+}
+
+/* Base button style */
+button {
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+/* Unique button classes */
+.btn-js { background: #f39c12; }   /* orange */
+.btn-js:hover { background: #d35400; }
+
+.btn-react { background: #3498db; } /* blue */
+.btn-react:hover { background: #21618c; }
+
+.btn-node { background: #27ae60; }  /* green */
+.btn-node:hover { background: #1e8449; }
+
+.btn-python { background: #9b59b6; } /* purple */
+.btn-python:hover { background: #6c3483; }
+
+.btn-extra { background: #2b627e; } /* teal */
+.btn-extra:hover { background: #226d64; }
+
+/* Cart items */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  background: #f9f9f9;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+.cart-item button {
+  background: #e74c3c !important; /* red remove button */
+}
+.cart-item button:hover {
+  background: #c0392b !important;
+}
+
+.cart-total {
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #34495e;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center;">📚 Online Bookstore</h1>
+<div class="book-list" id="bookList"></div>
+<div class="cart">
+  <h2>🛒 Shopping Cart</h2>
+  <div id="cartItems"></div>
+  <div class="cart-total" id="cartTotal">Total: ₹0</div>
+</div>
+<script type="module">
+import { displayBooks } from './books.js';
+import { updateCartUI } from './ui.js';
+import { cart } from './cart.js';
+
+// Display books on page load
+displayBooks();
+
+// Initialize empty cart display
+updateCartUI(cart);
+</script>
+</body>
+</html>
