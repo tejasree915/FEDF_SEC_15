@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Sum Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Matrix Sum Calculator</h1>
+        <hr>
+
+        <div class="matrix-input-section">
+            <h2>Matrix A Dimensions</h2>
+            <label>Rows:</label>
+            <input type="number" id="rowsA" value="2" min="1">
+            <label>Columns:</label>
+            <input type="number" id="colsA" value="2" min="1">
+            <button onclick="createMatrix('A')">Set Matrix A</button>
+        </div>
+
+        <h2>Matrix A</h2>
+        <div id="matrixA_container" class="matrix-container"></div>
+        <hr>
+
+        <div class="matrix-input-section">
+            <h2>Matrix B Dimensions</h2>
+            <label>Rows:</label>
+            <input type="number" id="rowsB" value="2" min="1">
+            <label>Columns:</label>
+            <input type="number" id="colsB" value="2" min="1">
+            <button onclick="createMatrix('B')">Set Matrix B</button>
+        </div>
+        
+        <h2>Matrix B</h2>
+        <div id="matrixB_container" class="matrix-container"></div>
+        <hr>
+
+        <button id="calculateBtn" onclick="calculateSum()">Calculate Sum</button>
+
+        <h2>Result Matrix</h2>
+        <div id="result_container" class="matrix-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
